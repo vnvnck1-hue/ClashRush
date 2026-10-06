@@ -1,0 +1,15 @@
+{
+	"failures": [],
+	"passed": true,
+	"renderer": "Windows",
+	"requirements": [
+		"F6/F7/F8 input",
+		"private overrides",
+		"exact restoration",
+		"unchanged sim/camera",
+		"new entities",
+		"hit flash",
+		"scene transitions"
+	],
+	"screenshots": true
+}

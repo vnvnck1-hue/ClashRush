@@ -1,0 +1,38 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+VERIFY PASS actual solo game initialized
+CODEX_LOOK: F7 토이박스 (render/UI only)
+VERIFY PASS F7 selects Toybox via real input event
+VERIFY PASS environment override uses private resource
+VERIFY PASS actor material override uses private resource
+VERIFY PASS soft toy diffuse applied
+VERIFY PASS ink outline removed in Toybox
+VERIFY PASS camera/aim basis preserved
+VERIFY PASS preset leaves simulation unchanged
+VERIFY PASS hit flash targets displayed preset material
+CODEX_LOOK: F8 웜 토이박스 (render/UI only)
+VERIFY PASS F8 selects Warm Toybox via input
+VERIFY PASS warm preset leaves simulation unchanged
+CODEX_LOOK: F6 원래 룩 (render/UI only)
+VERIFY PASS F6 selects original look
+VERIFY PASS exact original environment restored
+VERIFY PASS exact original mesh and material restored
+VERIFY PASS original hit-flash material restored
+VERIFY PASS all surviving mesh/multimesh/UI/light resources restored
+CODEX_LOOK: F7 토이박스 (render/UI only)
+VERIFY PASS new entities inherit active preset
+VERIFY PASS new entity hit-flash references remain connected
+VERIFY PASS hit flash visible on overridden material
+VERIFY PASS hit flash returns to zero
+CODEX_LOOK: F6 원래 룩 (render/UI only)
+VERIFY PASS new entity restores its own original material
+VERIFY PASS freed entity is released
+CODEX_LOOK: F7 토이박스 (render/UI only)
+VERIFY PASS return to lobby works under active preset
+VERIFY PASS new game builds under active preset
+VERIFY PASS preset persists across game/lobby transition
+CODEX_LOOK: F6 원래 룩 (render/UI only)
+VERIFY PASS original look restores after scene transition
+CODEX_PRESET_VERIFY: PASS failures=0

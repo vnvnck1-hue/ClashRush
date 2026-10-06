@@ -1,0 +1,34 @@
+TOY RUSH — Codex 토이박스 룩 프리셋
+
+실행: toy_rush/Toybox_Preview.cmd 더블클릭.
+Godot 에디터에서 실행해도 같은 단축키를 사용할 수 있습니다.
+프리뷰 실행기는 현재 소스를 읽으므로 Claude의 기존 룩 수정도 다음 실행에 반영됩니다.
+기존 build/ToyRush.exe 및 ToyRush.pck는 덮어쓰지 않았습니다.
+
+단축키 (타이틀, 로비, 전투에서 사용):
+F6  원래 룩 — 현재 실행에서 Claude/원본 코드가 만든 재질, 조명, 메시, UI로 복원.
+F7  토이박스 — 부드러운 플라스틱 재질, 얇은 접촉 그림자, 둥근 박스 모서리,
+              풀·길·바위 팔레트, 크림 패널 / 하늘색 도크 / 보라색 스킬 / 코랄 액션.
+F8  웜 토이박스 — F7 구성에 조금 더 따뜻한 햇빛과 색을 적용.
+
+프리뷰 실행기는 F7부터 시작합니다. 일반 에디터 실행은 F6부터 시작합니다.
+런치 인자: --codex-look=toybox 또는 --codex-look=warm (Godot -- 뒤에 전달).
+
+구조:
+scripts/codex_toybox/presets.gd        실행 중 오버라이드 / F6~F8 / 원복
+scripts/codex_toybox/rounded_box.gd    렌더링 전용 베벨 메시 (크기·변환 유지)
+scripts/codex_toybox/skin_overlay.gd   UI 꾸밈 (입력·스킬 쿨다운은 원래 UI가 처리)
+project.godot                        CodexToybox 오토로드 등록 1개
+
+Claude가 편집 중인 Look/Mats/View/Hud/Lobby/CameraRig/Main 소스는 수정하지 않습니다.
+원본 리소스를 보관하고 프리셋 전용 복사본을 사용합니다.
+게임 판정, 경제, 네트워크, 카메라 조작/조준 기준은 변경하지 않습니다.
+새로 생기는 적·병사·타워, 피격 플래시, 고스트 투명도와 로비↔게임 전환을 지원합니다.
+
+검증 실행 (toy_rush 폴더에서):
+build/CodexLookPreview.exe --path . --script res://scripts/codex_toybox/verify_presets.gd -- --solo --hero=queen --seed=6
+--headless를 추가하면 렌더 캡처 없이 동일한 런타임 검증을 수행합니다.
+캡처 및 검증 결과: docs/ui-concepts/runtime/verified/
+
+비활성화하려면 project.godot [autoload]의 CodexToybox 항목만 제거합니다.
+Claude가 새로 바꾼 소스가 이미 실행 중인 게임에 자동 반영되지는 않으므로 재실행합니다.
